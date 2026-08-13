@@ -8,7 +8,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
 
-requirements = python3,kivy,pyjnius,android,numpy
+requirements = python3,kivy,pyjnius,android,numpy,aidl
 
 orientation = portrait
 osx.python_version = 3
@@ -20,3 +20,4 @@ fullscreen = 0
 
 log_level = 2
 warn_on_root = 1
+android.accept_sdk_license = True
