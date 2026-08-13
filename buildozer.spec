@@ -24,5 +24,3 @@ android.accept_sdk_license = True
 android.ndk = 23b
 android.sdk = 30
 android.minapi = 21
-android.gradle_dependencies = 
-android.add_src = 
