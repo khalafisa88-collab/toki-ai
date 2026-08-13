@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Checkout code
@@ -29,6 +29,12 @@ jobs:
         pip install Cython==0.29.36
         pip install buildozer==1.5.0
 
+    - name: Accept Android SDK licenses
+      run: |
+        mkdir -p ~/.android
+        echo "### User Sources for Android SDK Manager" > ~/.android/repositories.cfg
+        yes | sdkmanager --licenses || true
+
     - name: Build APK
       run: |
         yes | buildozer android debug
@@ -36,5 +42,5 @@ jobs:
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: TokiBot-v1.0
+        name: TokiBot-v2.0
         path: bin/*.apk
